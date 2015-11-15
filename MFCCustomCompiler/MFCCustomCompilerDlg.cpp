@@ -20,7 +20,7 @@ public:
 	CAboutDlg();
 
 // 对话框数据
-	enum { IDD = IDD_ABOUTBOX };
+	enum { IDD = dig_config };
 
 	protected:
 	virtual void DoDataExchange(CDataExchange* pDX);    // DDX/DDV 支持
@@ -28,6 +28,8 @@ public:
 // 实现
 protected:
 	DECLARE_MESSAGE_MAP()
+public:
+	afx_msg void OnOpenfile();
 };
 
 CAboutDlg::CAboutDlg() : CDialogEx(CAboutDlg::IDD)
@@ -40,6 +42,7 @@ void CAboutDlg::DoDataExchange(CDataExchange* pDX)
 }
 
 BEGIN_MESSAGE_MAP(CAboutDlg, CDialogEx)
+	ON_COMMAND(ID_OPENFILE, &CAboutDlg::OnOpenfile)
 END_MESSAGE_MAP()
 
 
@@ -150,3 +153,10 @@ HCURSOR CMFCCustomCompilerDlg::OnQueryDragIcon()
 	return static_cast<HCURSOR>(m_hIcon);
 }
 
+
+
+void CAboutDlg::OnOpenfile()
+{
+	// TODO:  在此添加命令处理程序代码
+	int i = 0;
+}
