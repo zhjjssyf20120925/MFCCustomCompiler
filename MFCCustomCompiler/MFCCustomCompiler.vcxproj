@@ -101,6 +101,7 @@
     <Text Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="ConfigPath.h" />
     <ClInclude Include="MFCCustomCompiler.h" />
     <ClInclude Include="MFCCustomCompilerDlg.h" />
     <ClInclude Include="Resource.h" />
@@ -108,6 +109,7 @@
     <ClInclude Include="targetver.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="ConfigPath.cpp" />
     <ClCompile Include="MFCCustomCompiler.cpp" />
     <ClCompile Include="MFCCustomCompilerDlg.cpp" />
     <ClCompile Include="stdafx.cpp">
