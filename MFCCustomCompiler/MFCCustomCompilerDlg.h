@@ -1,32 +1,26 @@
-
 // MFCCustomCompilerDlg.h : 头文件
 //
 
 #pragma once
 
-
-// CMFCCustomCompilerDlg 对话框
-class CMFCCustomCompilerDlg : public CDialogEx
+class CMFCCustomCompilerDlg : public CDialogEx																		// CMFCCustomCompilerDlg 对话框
 {
-// 构造
-public:
-	CMFCCustomCompilerDlg(CWnd* pParent = NULL);	// 标准构造函数
+public:																												// 构造
+	CMFCCustomCompilerDlg(CWnd* pParent = NULL);																	// 标准构造函数
+	
+	enum { IDD = IDD_MFCCUSTOMCOMPILER_DIALOG };																	// 对话框数据
 
-// 对话框数据
-	enum { IDD = IDD_MFCCUSTOMCOMPILER_DIALOG };
-
-	protected:
-	virtual void DoDataExchange(CDataExchange* pDX);	// DDX/DDV 支持
-
-
-// 实现
 protected:
+	virtual void DoDataExchange(CDataExchange* pDX);																// DDX/DDV 支持
+
+protected:																											// 实现
 	HICON m_hIcon;
 
-	// 生成的消息映射函数
-	virtual BOOL OnInitDialog();
+	virtual BOOL OnInitDialog();																					// 生成的消息映射函数
 	afx_msg void OnSysCommand(UINT nID, LPARAM lParam);
 	afx_msg void OnPaint();
 	afx_msg HCURSOR OnQueryDragIcon();
 	DECLARE_MESSAGE_MAP()
+public:
+	afx_msg void OnOpenfile();																						// 打开文件按钮
 };

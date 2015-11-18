@@ -1,10 +1,10 @@
 
 // MFCCustomCompiler.cpp : 定义应用程序的类行为。
 //
-
 #include "stdafx.h"
 #include "MFCCustomCompiler.h"
 #include "MFCCustomCompilerDlg.h"
+#include "ConfigPath.h"
 
 #ifdef _DEBUG
 #define new DEBUG_NEW
@@ -19,6 +19,7 @@
  ***********************************************************************************************************/
 BEGIN_MESSAGE_MAP(CMFCCustomCompilerApp, CWinApp)
 	ON_COMMAND(ID_HELP, &CWinApp::OnHelp)
+	ON_COMMAND(ID_OUTPUTConfig, &CMFCCustomCompilerApp::OnOutputconfig)
 END_MESSAGE_MAP()
 
 
@@ -116,3 +117,16 @@ BOOL CMFCCustomCompilerApp::InitInstance()
 	return FALSE;
 }
 
+
+/***********************************************************************************************************
+ * 程序作者：赵进军
+ * 函数功能：打开配置文件
+ * 参数说明：null
+ * 注意事项：null
+ * 修改日期：2015/11/18 23:00:00
+ ***********************************************************************************************************/
+void CMFCCustomCompilerApp::OnOutputconfig()
+{
+	ConfigPath cp;
+	cp.DoModal();
+}
