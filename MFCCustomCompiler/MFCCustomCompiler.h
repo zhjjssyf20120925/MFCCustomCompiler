@@ -25,6 +25,9 @@ public:																												// 重写
 	DECLARE_MESSAGE_MAP()																							// 实现
 
 	afx_msg void OnOutputconfig();																					// 打开配置文件
+	afx_msg void OnSavefile();																						// 保存文件
+	afx_msg void OnMicrsoft();																						// Microsoft 编译代码
+	afx_msg void OnCodeblocks();																					// CodeBlocks 编译代码
 };
 
 extern CMFCCustomCompilerApp theApp;

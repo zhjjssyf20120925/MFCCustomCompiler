@@ -20,6 +20,9 @@
 BEGIN_MESSAGE_MAP(CMFCCustomCompilerApp, CWinApp)
 	ON_COMMAND(ID_HELP, &CWinApp::OnHelp)
 	ON_COMMAND(ID_OUTPUTConfig, &CMFCCustomCompilerApp::OnOutputconfig)
+	ON_COMMAND(ID_SAVEFILE, &CMFCCustomCompilerApp::OnSavefile)
+	ON_COMMAND(ID_MICRSOFT, &CMFCCustomCompilerApp::OnMicrsoft)
+	ON_COMMAND(ID_CODEBLOCKS, &CMFCCustomCompilerApp::OnCodeblocks)
 END_MESSAGE_MAP()
 
 
@@ -131,4 +134,43 @@ void CMFCCustomCompilerApp::OnOutputconfig()
 {
 	ConfigPath cp;
 	cp.DoModal();
+}
+
+
+/***********************************************************************************************************
+ * 程序作者：赵进军
+ * 函数功能：保存文件按钮
+ * 参数说明：null
+ * 注意事项：null
+ * 修改日期：2015/11/18 23:12:00
+ ***********************************************************************************************************/
+void CMFCCustomCompilerApp::OnSavefile()
+{
+
+}
+
+
+/***********************************************************************************************************
+ * 程序作者：赵进军
+ * 函数功能：Microsoft 编译代码
+ * 参数说明：null
+ * 注意事项：null
+ * 修改日期：2015/11/18 23:13:00
+ ***********************************************************************************************************/
+void CMFCCustomCompilerApp::OnMicrsoft()
+{
+
+}
+
+
+/***********************************************************************************************************
+ * 程序作者：赵进军
+ * 函数功能：CodeBlocks 编译代码
+ * 参数说明：null
+ * 注意事项：null
+ * 修改日期：2015/11/18 23:14:00
+ ***********************************************************************************************************/
+void CMFCCustomCompilerApp::OnCodeblocks()
+{
+
 }
