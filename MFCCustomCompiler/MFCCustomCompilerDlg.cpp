@@ -1,4 +1,3 @@
-
 // MFCCustomCompilerDlg.cpp : 实现文件
 //
 
@@ -10,40 +9,6 @@
 #ifdef _DEBUG
 #define new DEBUG_NEW
 #endif
-
-
-//class CAboutDlg : public CDialogEx																					// 用于应用程序“关于”菜单项的 CAboutDlg 对话框
-//{
-//public:
-//	CAboutDlg();
-//
-//	enum																										    // 对话框数据
-//	{
-//		IDD = dig_config
-//	};
-//
-//protected:
-//	virtual void DoDataExchange(CDataExchange* pDX);																// DDX/DDV 支持
-//
-//protected:																											// 实现
-//	DECLARE_MESSAGE_MAP()
-//public:
-//	afx_msg void OnOpenfile();																						// OpenFile 按钮事件
-//};
-//
-//CAboutDlg::CAboutDlg() : CDialogEx(CAboutDlg::IDD)
-//{
-//}
-
-//void CAboutDlg::DoDataExchange(CDataExchange* pDX)
-//{
-//	CDialogEx::DoDataExchange(pDX);
-//}
-//
-//BEGIN_MESSAGE_MAP(CAboutDlg, CDialogEx)
-//	ON_COMMAND(ID_OPENFILE, &CAboutDlg::OnOpenfile)
-//END_MESSAGE_MAP()
-
 
 CMFCCustomCompilerDlg::CMFCCustomCompilerDlg(CWnd* pParent /*=NULL*/)												// CMFCCustomCompilerDlg 对话框
 	: CDialogEx(CMFCCustomCompilerDlg::IDD, pParent)
@@ -105,18 +70,26 @@ BOOL CMFCCustomCompilerDlg::OnInitDialog()
 	return TRUE;																									// 除非将焦点设置到控件，否则返回 TRUE
 }
 
+
+/***********************************************************************************************************
+ * 程序作者：赵进军
+ * 函数功能：监视系统按钮消息
+ * 参数说明：null
+ * 注意事项：null
+ * 修改日期：2015/11/18 23:07:00
+ ***********************************************************************************************************/
 void CMFCCustomCompilerDlg::OnSysCommand(UINT nID, LPARAM lParam)
 {
 	if ((nID & 0xFFF0) == IDM_ABOUTBOX)
 	{
-		//CAboutDlg dlgAbout;
-		//dlgAbout.DoModal();
+
 	}
 	else
 	{
 		CDialogEx::OnSysCommand(nID, lParam);
 	}
 }
+
 
 /***********************************************************************************************************
  * 程序作者：赵进军
@@ -172,6 +145,5 @@ HCURSOR CMFCCustomCompilerDlg::OnQueryDragIcon()
  ***********************************************************************************************************/
 void CMFCCustomCompilerDlg::OnOpenfile()
 {
-	// TODO:  在此添加命令处理程序代码
 	int i = 0;
 }
