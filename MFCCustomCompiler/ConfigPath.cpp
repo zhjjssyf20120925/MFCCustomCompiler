@@ -24,6 +24,8 @@ ConfigPath::~ConfigPath()
 void ConfigPath::DoDataExchange(CDataExchange* pDX)
 {
 	CDialogEx::DoDataExchange(pDX);
+	DDX_Control(pDX, edt_mop, mop_SelectPath);
+	DDX_Control(pDX, edt_cop, cop_SelectPath);
 }
 
 
@@ -45,7 +47,9 @@ END_MESSAGE_MAP()
  ***********************************************************************************************************/
 void ConfigPath::OnBnClickedmop()
 {
-	SelectFilePath();
+	mop_SelectPath.SetWindowTextW(SelectFolder());
+	/*CString caption = TEXT("你选择的文件夹");
+	::MessageBox(NULL, getPath, caption, MB_OK);*/
 }
 
 
@@ -58,7 +62,7 @@ void ConfigPath::OnBnClickedmop()
  ***********************************************************************************************************/
 void ConfigPath::OnBnClickedcop()
 {
-	SelectFilePath();
+	cop_SelectPath.SetWindowTextW(SelectFolder());
 }
 
 
@@ -69,7 +73,30 @@ void ConfigPath::OnBnClickedcop()
  * 注意事项：null
  * 修改日期：2015/11/18 23:32:00
  ***********************************************************************************************************/
-char* ConfigPath::SelectFilePath()
+CString ConfigPath::SelectFolder()
 {
-	return NULL;
+	TCHAR  szFolderPath[MAX_PATH] = { 0 };
+	CString strFolderPath = TEXT("");
+	BROWSEINFO sInfo;
+	::ZeroMemory(&sInfo, sizeof(BROWSEINFO));
+	sInfo.pidlRoot = 0;
+	sInfo.lpszTitle = _T("请选择一个文件夹:");
+	sInfo.ulFlags = BIF_DONTGOBELOWDOMAIN | BIF_RETURNONLYFSDIRS | BIF_EDITBOX;
+	sInfo.lpfn = NULL;
+
+	LPITEMIDLIST lpidlBrowse = ::SHBrowseForFolder(&sInfo);
+	if (lpidlBrowse != NULL)
+	{
+		if (::SHGetPathFromIDList(lpidlBrowse, szFolderPath))
+		{
+			strFolderPath = szFolderPath;
+		}
+	}
+
+	if (lpidlBrowse != NULL)
+	{
+		::CoTaskMemFree(lpidlBrowse);
+	}
+
+	return strFolderPath;
 }

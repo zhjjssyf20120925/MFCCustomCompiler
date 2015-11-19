@@ -1,4 +1,5 @@
 #pragma once
+#include "afxwin.h"
 
 class ConfigPath : public CDialogEx																					// ConfigPath ¶Ô»°¿ò
 {
@@ -16,5 +17,8 @@ public:
 	afx_msg void OnBnClickedmop();
 	afx_msg void OnBnClickedcop();
 private:
-	char* SelectFilePath();
+	CString SelectFolder();
+public:
+	CEdit mop_SelectPath;
+	CEdit cop_SelectPath;
 };
